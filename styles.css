@@ -1,0 +1,129 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  /transition: background-color 0.3s ease;
+}
+
+.container {
+  text-align: center;
+  background: #b7b4b4;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 370px; /* Limit width for mobile */
+  margin: 0 auto; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-3px);
+}
+
+h1 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.6em;
+}
+
+.date-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.label {
+  color: #333;
+  font-size: 0.9em;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #6b6b6b;
+  font-size: 1em;
+  flex: 1;
+  transition: border-color 0.4s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.check-button,
+.today-button {
+  padding: 12px 24px;
+  margin: 5px;
+  background-color: #007bff;
+  color: #f3f1f1;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.check-button:hover,
+.today-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.check-button:active,
+.today-button:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+.result {
+  margin-top: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.cd-week,
+.dc-week {
+  padding: 12px 24px;
+  margin: 5px;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  /transition: background-color 0.9s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cd-week {
+  background-color: #4CAF50;
+}
+
+.dc-week {
+  background-color: #007bff;
+}
+
+.cd-week:hover,
+.dc-week:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
