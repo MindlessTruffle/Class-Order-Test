@@ -101,4 +101,22 @@ function updateBackground(weekNumber, isWeekend) {
 window.onload = function() {
   fillCurrentDate();
   checkWeek();
+
+  document.getElementById('day').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      checkWeek();
+    }
+  });
+
+  document.getElementById('month').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      checkWeek();
+    }
+  });
+
+  document.getElementById('year').addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      checkWeek();
+    }
+  });
 };
