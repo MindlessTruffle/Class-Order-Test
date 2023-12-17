@@ -34,7 +34,7 @@ function checkWeek() {
     return;
   }
 
-  document.body.style.backgroundColor = ''; 
+  document.body.style.backgroundColor = '';
 
   const date = new Date(year, month - 1, day);
   const weekNumber = getWeekNumber(date);
@@ -60,7 +60,7 @@ function fillCurrentDate() {
   document.getElementById('month').value = today.getMonth() + 1;
   document.getElementById('year').value = today.getFullYear();
 
-  checkWeek(); 
+  checkWeek();
 }
 
 function validateInput(value, min, max) {
@@ -75,25 +75,37 @@ function validateInput(value, min, max) {
 }
 
 function getWeekNumber(date) {
-  const referenceDate = new Date(2023, 12, 8); 
+  const referenceDate = new Date(2023, 12, 8);
   const diffInTime = date.getTime() - referenceDate.getTime();
   const diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24));
   return Math.floor(diffInDays / 7) + 1;
 }
 
-function updateBackground(weekNumber) {
+function updateBackground(weekNumber, isWeekend) {
   const body = document.querySelector('body');
-  const isWeekend = new Date().getDay() === 0 || new Date().getDay() === 6;
+  const isHoliday = checkForCanadianHolidays(new Date().getMonth() + 1, new Date().getDate());
 
   if (weekNumber % 2 === 0) {
     body.className = isWeekend ? 'dc-weekend' : 'dc-week';
+    if (isHoliday !== '') {
+      body.className += ' holiday';
+    }
   } else {
     body.className = isWeekend ? 'cd-weekend' : 'cd-week';
+    if (isHoliday !== '') {
+      body.className += ' holiday';
+    }
   }
 }
 
+function toggleInfo() {
+  const infoText = document.querySelector('.info-text');
+  infoText.classList.toggle('visible');
+}
 
-window.onload = function () {
+
+
+window.onload = function() {
   fillCurrentDate();
   checkWeek();
 };
