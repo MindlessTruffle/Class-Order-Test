@@ -98,13 +98,6 @@ function updateBackground(weekNumber, isWeekend) {
   }
 }
 
-function toggleInfo() {
-  const infoText = document.querySelector('.info-text');
-  infoText.classList.toggle('visible');
-}
-
-
-
 window.onload = function() {
   fillCurrentDate();
   checkWeek();
