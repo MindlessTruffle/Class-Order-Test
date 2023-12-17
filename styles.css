@@ -20,11 +20,10 @@ body {
 .container {
   text-align: center;
   background: #b7b4b4;
-  padding: 25px;
+  padding: 20px; /* Adjusted padding */
   border-radius: 15px;
-  width: 320%;
+  width: 90%; /* Changed width to a percentage */
   max-width: 370px;
-  /* Limit width for mobile */
   margin: 0 auto;
   box-shadow: 0 6px 12px rgba(255, 222, 255, 0.7);
   transition: transform 0.3s ease;
