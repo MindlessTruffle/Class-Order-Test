@@ -118,12 +118,6 @@ input:focus {
   background-color: #007bff !important;
 }
 
-.cd-week:hover,
-.dc-week:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
-}
-
 /* Media query for mobile devices */
 @media screen and (max-width: 480px) {
   body {
