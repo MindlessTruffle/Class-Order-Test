@@ -6,67 +6,73 @@
   <title>School Week Checker</title>
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* Your added styles for the info button and text */
     .info-button {
       position: fixed;
       top: 20px;
       left: 20px;
       font-size: 24px;
       cursor: pointer;
+      z-index: 1001;
     }
 
-    .info-text {
+    .info-container {
       position: fixed;
-      top: 20px;
-      left: 60px;
-      padding: 10px;
-      display: none;
+      top: -100%; 
+      left: 20px;
+      width: calc(100% - 40px);
       z-index: 1000;
       font-style: bold;
       font-size: 18px;
       font-family: sans-serif;
+      transition: top 0.4s ease-in-out; 
     }
 
-    .info-text.visible {
-      display: block;
+    .info-text {
+      padding: 10px;
     }
 
-    /* Media query for mobile devices */
-    @media screen and (max-width: 480px) {
-      body {
-        font-size: 14px;
-      }
+    .info-container.visible {
+      top: 60px; 
+    }
 
-      .container {
-        width: 90%;
-        max-width: 300px;
-        padding: 15px;
+    @keyframes flyIn {
+      from {
+        top: -100%; 
       }
-
-      h1 {
-        font-size: 1.4em;
+      to {
+        top: 60px; 
       }
+    }
 
-      .info-button {
-        font-size: 20px;
+    @keyframes flyOut {
+      from {
+        top: 60px; 
       }
-
-      .info-text {
-        font-size: 16px;
+      to {
+        top: -100%; 
       }
+    }
 
-      /* Adjust other styles as needed for smaller screens */
+    .info-container.visible {
+      animation-name: flyIn;
+    }
+    .info-container:not(.visible) {
+      animation-name: flyOut;
+    }
+    .info-container:hover {
+      top: 60px; 
     }
   </style>
 </head>
 
 <body>
   <div class="info-button" onclick="toggleInfo()">ℹ️</div>
-  <div class="info-text hidden">
-    Enter any date below to find out if the class period order is CD or DC. The program will default to the current date
-    on opening.
+  <div class="info-container">
+    <div class="info-text">
+      Enter any date below to find out if the class period order is CD or DC. The program will default to the current
+      date on opening.
+    </div>
   </div>
-
   <div class="container">
     <h1>Class Order Checker</h1>
     <div class="date-inputs">
@@ -89,8 +95,8 @@
   <script src="script.js"></script>
   <script>
     function toggleInfo() {
-      const infoText = document.querySelector('.info-text');
-      infoText.classList.toggle('visible');
+      const infoContainer = document.querySelector('.info-container');
+      infoContainer.classList.toggle('visible');
     }
   </script>
 </body>
