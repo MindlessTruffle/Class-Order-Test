@@ -17,7 +17,6 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Container for the main content */
 .container {
   text-align: center;
   background: #b7b4b4;
