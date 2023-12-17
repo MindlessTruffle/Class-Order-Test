@@ -102,21 +102,19 @@ window.onload = function() {
   fillCurrentDate();
   checkWeek();
 
-  document.getElementById('day').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-      checkWeek();
-    }
-  });
+  const dayInput = document.getElementById('day');
+  const monthInput = document.getElementById('month');
+  const yearInput = document.getElementById('year');
 
-  document.getElementById('month').addEventListener('keyup', function(event) {
+  const handleEnterKey = function(event) {
     if (event.key === 'Enter') {
       checkWeek();
+      event.target.blur(); 
     }
-  });
+  };
 
-  document.getElementById('year').addEventListener('keyup', function(event) {
-    if (event.key === 'Enter') {
-      checkWeek();
-    }
-  });
+  dayInput.addEventListener('keyup', handleEnterKey);
+  monthInput.addEventListener('keyup', handleEnterKey);
+  yearInput.addEventListener('keyup', handleEnterKey);
 };
+
