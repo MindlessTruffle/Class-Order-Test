@@ -1,3 +1,4 @@
+/* Reset default styles */
 * {
   margin: 0;
   padding: 0;
@@ -16,18 +17,20 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/* Container for the main content */
 .container {
   text-align: center;
   background: #b7b4b4;
-  padding: 20px; /* Adjusted padding */
+  padding: 25px;
   border-radius: 15px;
-  width: 90%; /* Changed width to a percentage */
+  width: 320%;
   max-width: 370px;
   margin: 0 auto;
   box-shadow: 0 6px 12px rgba(255, 222, 255, 0.7);
   transition: transform 0.3s ease;
 }
 
+/* Container hover effect */
 .container:hover {
   transform: translateY(-3px);
 }
@@ -43,12 +46,6 @@ h1 {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
 }
 
 .label {
@@ -125,4 +122,23 @@ input:focus {
 .dc-week:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Media query for mobile devices */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+  }
+
+  /* Adjust other styles as needed for smaller screens */
 }
