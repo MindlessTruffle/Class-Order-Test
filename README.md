@@ -1,2 +1,2 @@
 # Class-Order-Test
-Simple Test of github pages - nothing to see here
+Using Github Pages to Keep Track of School Calender 
