@@ -1,8 +1,8 @@
 function checkForCanadianHolidays(month, day) {
   const holidayRanges = [
     { name: 'Winter Break', startMonth: 12, startDay: 25, endMonth: 1, endDay: 5 },
-    { name: 'Spring Break', startMonth: 3, startDay: 1, endMonth: 3, endDay: 15 },
-    { name: 'Summer Break', startMonth: 6, startDay: 25, endMonth: 8, endDay: 31 }
+    { name: 'Spring Break', startMonth: 3, startDay: 11, endMonth: 3, endDay: 15 },
+    { name: 'Summer Break', startMonth: 6, startDay: 29, endMonth: 9, endDay: 7}
   ];
 
   for (const holidayRange of holidayRanges) {
@@ -29,12 +29,13 @@ function checkWeek() {
   const isInvalidMonth = month < 1 || month > 12;
   const isInvalidYear = year < 2000 || year > 2100;
 
-  if (isInvalidDay || isInvalidMonth || isInvalidYear) {
-    document.body.style.backgroundColor = 'red';
-    return;
-  }
+  // if (isInvalidDay || isInvalidMonth || isInvalidYear) {
+  //   console.log("this happens")
+  //   document.container.style.backgroundColor = 'red';
+  //   return;
+  // }
 
-  document.body.style.backgroundColor = '';
+  //document.body.style.backgroundColor = '';
 
   const date = new Date(year, month - 1, day);
   const weekNumber = getWeekNumber(date);
@@ -46,6 +47,9 @@ function checkWeek() {
   const holiday = checkForCanadianHolidays(month, day);
   if (holiday !== '') {
     resultDiv.innerText += ` ${holiday}`;
+  }
+  if (isWeekend === true) {
+    resultDiv.innerText += ` (Weekend)`;
   }
 
   resultDiv.style.opacity = '1';
@@ -117,4 +121,3 @@ window.onload = function() {
   monthInput.addEventListener('keyup', handleEnterKey);
   yearInput.addEventListener('keyup', handleEnterKey);
 };
-
