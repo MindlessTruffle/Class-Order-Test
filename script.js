@@ -35,7 +35,7 @@ function checkWeek() {
   //   return;
   // }
 
-  //document.body.style.backgroundColor = '';
+  document.body.style.backgroundColor = '';
 
   const date = new Date(year, month - 1, day);
   const weekNumber = getWeekNumber(date);
