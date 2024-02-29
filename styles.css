@@ -56,7 +56,7 @@ input {
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #6b6b6b;
-  font-size: 1em;
+  font-size: 1.2em;
   flex: 1;
   transition: border-color 0.4s ease;
 }
@@ -74,7 +74,7 @@ input:focus {
   color: #f3f1f1;
   border: 2px solid transparent;
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 1.1em;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -93,9 +93,9 @@ input:focus {
 
 .result {
   margin-top: 15px;
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: bold;
-  color: #007bff;
+  color: #f943bf;
 }
 
 .cd-week,
@@ -110,7 +110,7 @@ input:focus {
 }
 
 .cd-week {
-  background-color: #4CAF50 !important;
+  background-color: #48d54d !important;
 }
 
 .dc-week {
