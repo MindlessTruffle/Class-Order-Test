@@ -35,9 +35,9 @@ body {
 }
 
 .side-panel img {
-  width: 100%; 
+  width: 25vw; 
   height: auto; 
-  max-width: 500px; /* Set a maximum width to prevent the image from becoming too large on larger screens */
+  max-width: 300px; /* Set a maximum width to prevent the image from becoming too large on larger screens */
   border-radius: 16px; 
 }
 
