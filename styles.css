@@ -21,9 +21,9 @@ body {
   text-align: center;
   background: #b7b4b4;
   padding: 25px;
-  border-radius: 15px;
-  width: 320%;
-  max-width: 370px;
+  border-radius: 32px;
+  width: 100vw;
+  max-width: 400px;
   margin: 0 auto;
   box-shadow: 0 6px 12px rgba(255, 222, 255, 0.7);
   transition: transform 0.3s ease;
