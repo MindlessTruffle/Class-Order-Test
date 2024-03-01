@@ -34,8 +34,10 @@ body {
   transform: translateY(-3px);
 }
 
-/* rounding ad image corners */
 .side-panel img {
+  width: 100%; 
+  height: auto; 
+  max-width: 500px; /* Set a maximum width to prevent the image from becoming too large on larger screens */
   border-radius: 16px; 
 }
 
