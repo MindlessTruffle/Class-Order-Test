@@ -1,19 +1,25 @@
 function checkForCanadianHolidays(month, day) {
   const holidayRanges = [
     { name: 'Winter Break', startMonth: 12, startDay: 25, endMonth: 1, endDay: 5 },
-    { name: 'Spring Break', startMonth: 3, startDay: 11, endMonth: 3, endDay: 15 },
+    { name: 'Spring Break', startMonth: 3, startDay: 9, endMonth: 3, endDay: 15 },
     { name: 'Summer Break', startMonth: 6, startDay: 29, endMonth: 9, endDay: 7}
   ];
 
   for (const holidayRange of holidayRanges) {
     const { name, startMonth, startDay, endMonth, endDay } = holidayRange;
-    if ((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) {
+
+    if (
+      (month === startMonth && day >= startDay && month === endMonth && day <= endDay) ||
+      (month === startMonth && day >= startDay && month !== endMonth) ||
+      (month === endMonth && day <= endDay && month !== startMonth)
+    ) {
       return `(${name})`;
     }
   }
 
   return '';
 }
+
 
 function checkWeek() {
   let day = parseInt(document.getElementById('day').value);
@@ -35,7 +41,7 @@ function checkWeek() {
   //   return;
   // }
 
-  document.body.style.backgroundColor = '';
+  //document.body.style.backgroundColor = '';
 
   const date = new Date(year, month - 1, day);
   const weekNumber = getWeekNumber(date);

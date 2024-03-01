@@ -16,7 +16,7 @@ body {
   transition: background-color 0.3s ease;
 }
 
-/* Container for the main content */
+/* main stuff */
 .container {
   text-align: center;
   background: #b7b4b4;
@@ -117,7 +117,7 @@ input:focus {
   background-color: #007bff !important;
 }
 
-/* Media query for mobile devices */
+/* query mobile  THAT DOESNT WORK */
 @media screen and (max-width: 480px) {
   body {
     font-size: 14px;
