@@ -2,7 +2,7 @@ function checkForCanadianHolidays(month, day) {
   const holidayRanges = [
     { name: 'Winter Break', startMonth: 12, startDay: 25, endMonth: 1, endDay: 5 },
     { name: 'Spring Break', startMonth: 3, startDay: 9, endMonth: 3, endDay: 15 },
-    { name: 'Summer Break', startMonth: 6, startDay: 29, endMonth: 9, endDay: 7}
+    { name: 'Summer Break', startMonth: 6, startDay: 29, endMonth: 9, endDay: 7 }
   ];
 
   for (const holidayRange of holidayRanges) {
@@ -61,7 +61,7 @@ function checkWeek() {
   resultDiv.style.opacity = '1';
   resultDiv.style.transform = 'translateY(0)';
 
-  updateBackground(weekNumber);
+  updateBackground(weekNumber, isWeekend);
 }
 
 function fillCurrentDate() {
@@ -96,12 +96,12 @@ function updateBackground(weekNumber, isWeekend) {
   const isHoliday = checkForCanadianHolidays(new Date().getMonth() + 1, new Date().getDate());
 
   if (weekNumber % 2 === 0) {
-    body.className = isWeekend ? 'dc-weekend' : 'dc-week';
+    body.className = isWeekend ? 'dc-weekend bg-warning' : 'dc-week bg-info';
     if (isHoliday !== '') {
       body.className += ' holiday';
     }
   } else {
-    body.className = isWeekend ? 'cd-weekend' : 'cd-week';
+    body.className = isWeekend ? 'cd-weekend bg-warning' : 'cd-week bg-success';
     if (isHoliday !== '') {
       body.className += ' holiday';
     }
@@ -119,7 +119,7 @@ window.onload = function() {
   const handleEnterKey = function(event) {
     if (event.key === 'Enter') {
       checkWeek();
-      event.target.blur(); 
+      event.target.blur();
     }
   };
 
