@@ -85,7 +85,7 @@ function validateInput(value, min, max) {
 }
 
 function getWeekNumber(date) {
-  const referenceDate = new Date(2023, 12, 8);
+  const referenceDate = new Date(2024, 3, 26);
   const diffInTime = date.getTime() - referenceDate.getTime();
   const diffInDays = Math.floor(diffInTime / (1000 * 3600 * 24));
   return Math.floor(diffInDays / 7) + 1;
